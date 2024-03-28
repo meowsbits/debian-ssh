@@ -22,8 +22,7 @@ RUN useradd docker \
         && passwd -d docker \
         && mkdir /home/docker \
         && chown docker:docker /home/docker \
-        && addgroup docker staff \
-        && addgroup docker sudo \
+        && usermod -a -G staff,sudo docker \
         && true
 
 EXPOSE 22
